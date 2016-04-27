@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Created:cbbc9d22-5cf7-4e4c-8ee9-42a772aae58a-->
+<OfficeApp xsi:type="MailApp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/office/appforoffice/1.0">
+  <Id>AE7F0F83-B947-4B6C-AB2B-9CE30C9A996E</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Craig Trulove</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="SNL Demo" />
+  <Description DefaultValue="My description" />
+  <AppDomains>
+    <AppDomain>https://sct-mailapp1.azurewebsites.net</AppDomain>
+  </AppDomains>
+  <Capabilities>
+    <Capability Name="Mailbox" />
+  </Capabilities>
+  <DesktopSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/AppRead/Home/Home.html" />
+    <RequestedHeight>250</RequestedHeight>
+  </DesktopSettings>
+  <TabletSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/AppRead/Home/Home.html" />
+    <RequestedHeight>250</RequestedHeight>
+  </TabletSettings>
+  <PhoneSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/AppRead/Home/Home.html" />
+  </PhoneSettings>
+  <Permissions>ReadItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <!-- To add more complex rules, add additional rule elements -->
+    <Rule xsi:type="ItemIs" ItemType="Message" />
+    <Rule xsi:type="ItemHasRegularExpressionMatch" PropertyName="BodyAsPlaintext" RegExValue="KQT: -\d{10}" IgnoreCase="true" RegExName="KQT"/>
+  </Rule>
+</OfficeApp>
